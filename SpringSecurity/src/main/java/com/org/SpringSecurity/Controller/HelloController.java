@@ -10,6 +10,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello(HttpServletRequest request){
-        return "HEllo World" + request.getSession().getId();
+        return "HEllo World";
     }
 }

@@ -1,6 +1,5 @@
-package com.org.SpringSecurity.Service;
+package com.org.SpringSecurity.Security;
 
-import com.org.SpringSecurity.Model.UserPrinciple;
 import com.org.SpringSecurity.Model.Users;
 import com.org.SpringSecurity.Repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +22,6 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User Not Found 404@!");
         }
 
-        return  new UserPrinciple(user);
+        return  new Users(user);
     }
 }
