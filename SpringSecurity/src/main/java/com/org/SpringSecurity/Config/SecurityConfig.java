@@ -1,5 +1,8 @@
     package com.org.SpringSecurity.Config;
 
+    import com.org.SpringSecurity.Security.OAuth2SuccessHandler;
+    import lombok.RequiredArgsConstructor;
+    import lombok.extern.slf4j.Slf4j;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.context.annotation.Bean;
     import org.springframework.context.annotation.Configuration;
@@ -15,15 +18,20 @@
     import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
     import org.springframework.security.web.SecurityFilterChain;
     import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+    import org.springframework.web.servlet.HandlerExceptionResolver;
 
     @Configuration
     @EnableWebSecurity //--> to remove default Login form
+    @Slf4j
+    @RequiredArgsConstructor
     public class SecurityConfig {
 
         @Autowired
         private  UserDetailsService userDetailsService;
+        private final JwtAuthFilter jwtAuthFilter;
         @Autowired
-        private JwtAuthFilter jwtAuthFilter;
+        private OAuth2SuccessHandler oAuth2SuccessHandler;
+
         @Bean
         public SecurityFilterChain SecurityFilterChain(HttpSecurity http) throws Exception {
             System.out.println("securityCongfig");
@@ -38,7 +46,13 @@
                             ).permitAll()
                             .anyRequest().authenticated())
                     .httpBasic(Customizer.withDefaults())
-                    .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) // Uncomment when ready
+                    .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)
+                    .oauth2Login(outh2 -> outh2.
+                                    failureHandler((request, response, exception) ->{
+                                        log.error("oAuth2 err : {}", exception.getMessage());
+                                    })
+                            .successHandler(oAuth2SuccessHandler)
+                    )
                     .build();
         }
 
@@ -54,18 +68,4 @@
         public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
             return  authenticationConfiguration.getAuthenticationManager();
         }
-
-
-    // issue with this is not connecting to DB
-//    @Bean
-//    public  UserDetailsService userDetailsService(){
-//        UserDetails user = User
-//                .withDefaultPasswordEncoder()
-//                .username("kiran")
-//                .password("k@123")
-//                .roles("USER")
-//                .build();
-//        return  new InMemoryUserDetailsManager(user);
-//    }
-
 }

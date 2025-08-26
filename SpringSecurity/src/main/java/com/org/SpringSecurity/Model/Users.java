@@ -25,6 +25,10 @@ public class Users implements UserDetails {
     private String username;
     private String  password;
 
+    private String providerId;
+    @Enumerated(EnumType.STRING)
+    private AuthProviderType providerType;
+
     public Users(Users user) {
         this.id = user.getId();
         this.username = user.getUsername();
