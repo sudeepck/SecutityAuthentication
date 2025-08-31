@@ -1,5 +1,6 @@
-package com.org.SpringSecurity.Model;
+package com.org.SpringSecurity.Entity;
 
+import com.org.SpringSecurity.Entity.Type.AuthProviderType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

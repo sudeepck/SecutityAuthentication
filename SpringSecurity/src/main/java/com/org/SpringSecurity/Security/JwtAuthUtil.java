@@ -1,7 +1,7 @@
 package com.org.SpringSecurity.Security;
 
-import com.org.SpringSecurity.Model.AuthProviderType;
-import com.org.SpringSecurity.Model.Users;
+import com.org.SpringSecurity.Entity.Type.AuthProviderType;
+import com.org.SpringSecurity.Entity.Users;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

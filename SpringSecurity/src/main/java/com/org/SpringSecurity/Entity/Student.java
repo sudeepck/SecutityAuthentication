@@ -1,4 +1,4 @@
-package com.org.SpringSecurity.Model;
+package com.org.SpringSecurity.Entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -42,7 +42,13 @@
                             .requestMatchers(
                                     "/auth/signup",
                                     "/auth/updatePassword",
-                                    "/auth/login"
+                                    "/auth/login",
+                                    "/patient/{id}",
+                                    "/patient/name/{id}",
+                                    "/patient/",
+                                    "/patient/AddPatient",
+                                    "/doctor/AddDoctor",
+                                    "/doctor/{id}"
                             ).permitAll()
                             .anyRequest().authenticated())
                     .httpBasic(Customizer.withDefaults())

@@ -1,6 +1,6 @@
 package com.org.SpringSecurity.Controller;
 
-import com.org.SpringSecurity.Model.Users;
+import com.org.SpringSecurity.Entity.Users;
 import com.org.SpringSecurity.Security.AuthService;
 import com.org.SpringSecurity.dto.LoginRequestDto;
 import com.org.SpringSecurity.dto.LoginresponseDto;

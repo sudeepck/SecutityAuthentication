@@ -1,6 +1,6 @@
 package com.org.SpringSecurity.Service;
 
-import com.org.SpringSecurity.Model.Student;
+import com.org.SpringSecurity.Entity.Student;
 import com.org.SpringSecurity.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

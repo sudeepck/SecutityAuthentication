@@ -1,7 +1,5 @@
 package com.org.SpringSecurity.Config;
 
-import com.org.SpringSecurity.Model.Users;
-import com.org.SpringSecurity.Repository.UserRepo;
 import com.org.SpringSecurity.Security.JwtAuthUtil;
 import com.org.SpringSecurity.Security.MyUserDetailsService;
 import jakarta.servlet.FilterChain;

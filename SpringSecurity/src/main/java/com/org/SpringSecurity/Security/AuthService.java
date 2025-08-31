@@ -1,7 +1,7 @@
 package com.org.SpringSecurity.Security;
 
-import com.org.SpringSecurity.Model.AuthProviderType;
-import com.org.SpringSecurity.Model.Users;
+import com.org.SpringSecurity.Entity.Type.AuthProviderType;
+import com.org.SpringSecurity.Entity.Users;
 import com.org.SpringSecurity.Repository.UserRepo;
 import com.org.SpringSecurity.dto.LoginRequestDto;
 import com.org.SpringSecurity.dto.LoginresponseDto;
@@ -18,7 +18,6 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 

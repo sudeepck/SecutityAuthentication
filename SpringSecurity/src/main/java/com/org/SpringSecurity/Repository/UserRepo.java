@@ -1,7 +1,7 @@
 package com.org.SpringSecurity.Repository;
 
-import com.org.SpringSecurity.Model.AuthProviderType;
-import com.org.SpringSecurity.Model.Users;
+import com.org.SpringSecurity.Entity.Type.AuthProviderType;
+import com.org.SpringSecurity.Entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

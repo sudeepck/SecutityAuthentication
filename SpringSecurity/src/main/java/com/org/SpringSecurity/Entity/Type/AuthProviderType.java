@@ -1,4 +1,4 @@
-package com.org.SpringSecurity.Model;
+package com.org.SpringSecurity.Entity.Type;
 
 public enum AuthProviderType {
     GOOGLE,

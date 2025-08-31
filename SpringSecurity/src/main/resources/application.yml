@@ -2,8 +2,8 @@ spring:
   security.oauth2.client:
     registration:
       google:
-        client-id:
-        client-secret:
+        client-id: dfsdas
+        client-secret: sdsda
       github:
-        client-id:
-        client-secret:
+        client-id: Ov23liU9UJcCT2ru9U8F
+        client-secret: 8b6868feb4e26f6041c502408999e88afb990268
