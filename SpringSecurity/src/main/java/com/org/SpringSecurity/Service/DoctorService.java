@@ -1,17 +1,11 @@
 package com.org.SpringSecurity.Service;
 
 import com.org.SpringSecurity.Entity.Doctor;
-import com.org.SpringSecurity.Entity.Insurance;
-import com.org.SpringSecurity.Entity.Patient;
 import com.org.SpringSecurity.Repository.DoctorRepository;
-import com.org.SpringSecurity.dto.DoctorRequestDto;
-import com.org.SpringSecurity.dto.DoctorResponseDto;
-import com.org.SpringSecurity.dto.InsuranceResponseDto;
+import com.org.SpringSecurity.dto.Doctor.DoctorRequestDto;
+import com.org.SpringSecurity.dto.Doctor.DoctorResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor

@@ -3,6 +3,7 @@ package com.org.SpringSecurity.Entity;
 import jakarta.persistence.*;
 import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
@@ -24,6 +25,11 @@ public class  Appointment {
 
     @Column(length = 1000)
     private String reason;
+
+    @CreationTimestamp
+    @Column(updatable = false)
+    @ToString.Exclude
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @ToString.Exclude

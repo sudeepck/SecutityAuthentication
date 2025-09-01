@@ -48,7 +48,9 @@
                                     "/patient/",
                                     "/patient/AddPatient",
                                     "/doctor/AddDoctor",
-                                    "/doctor/{id}"
+                                    "/doctor/{id}",
+                                    "/appointments/**",
+                                    "/dashboard"
                             ).permitAll()
                             .anyRequest().authenticated())
                     .httpBasic(Customizer.withDefaults())

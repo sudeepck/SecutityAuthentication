@@ -33,11 +33,25 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
         OAuth2User oAuth2User = (OAuth2User) authentication.getPrincipal();
         String registrationId = token.getAuthorizedClientRegistrationId(); // from where login is done
 
+//        try {
+//            ResponseEntity<LoginresponseDto> loginresponseDto = authService.handleOAuthLoginRequest(oAuth2User, registrationId);
+//            response.setStatus(loginresponseDto.getStatusCode().value());
+//            response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+//            response.getWriter().write(objectMapper.writeValueAsString(loginresponseDto.getBody()));
+//        } catch (IllegalAccessException e) {
+//            throw new RuntimeException(e);
+//        }
+
         try {
-            ResponseEntity<LoginresponseDto> loginresponseDto = authService.handleOAuthLoginRequest(oAuth2User, registrationId);
-            response.setStatus(loginresponseDto.getStatusCode().value());
-            response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-            response.getWriter().write(objectMapper.writeValueAsString(loginresponseDto.getBody()));
+            // Generate and store the JWT (you can also store in session if needed)
+            ResponseEntity<LoginresponseDto> loginResponse = authService.handleOAuthLoginRequest(oAuth2User, registrationId);
+
+            // Optionally store token or user details in session/request attributes (if needed)
+            request.getSession().setAttribute("jwt", loginResponse.getBody().getJwt());
+            request.getSession().setAttribute("userId", loginResponse.getBody().getUserId());
+
+            // ✅ Redirect to backend endpoint
+            response.sendRedirect("/dashboard");
 
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);

@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoginresponseDto {
     String jwt;
-    int userId;
+    Long userId;
 }

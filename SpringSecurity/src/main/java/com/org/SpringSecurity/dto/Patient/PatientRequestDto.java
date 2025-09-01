@@ -1,11 +1,10 @@
-package com.org.SpringSecurity.dto;
+package com.org.SpringSecurity.dto.Patient;
 
 import com.org.SpringSecurity.Entity.Type.BloodGroupType;
 import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @Builder

@@ -1,7 +1,8 @@
-package com.org.SpringSecurity.dto;
+package com.org.SpringSecurity.dto.Patient;
 
 
 import com.org.SpringSecurity.Entity.Type.BloodGroupType;
+import com.org.SpringSecurity.dto.InsuranceResponseDto;
 import lombok.Builder;
 import lombok.Data;
 

@@ -2,8 +2,8 @@ package com.org.SpringSecurity.Controller;
 
 import com.org.SpringSecurity.Entity.Patient;
 import com.org.SpringSecurity.Service.PatientService;
-import com.org.SpringSecurity.dto.PatientRequestDto;
-import com.org.SpringSecurity.dto.PatientResponseDTO;
+import com.org.SpringSecurity.dto.Patient.PatientRequestDto;
+import com.org.SpringSecurity.dto.Patient.PatientResponseDTO;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

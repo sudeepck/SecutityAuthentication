@@ -21,7 +21,7 @@ import java.util.Collections;
 public class Users implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     @JoinColumn(unique = true)
     private String username;
     private String  password;

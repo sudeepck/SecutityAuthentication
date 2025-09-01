@@ -1,14 +1,11 @@
 package com.org.SpringSecurity.Controller;
 
 import com.org.SpringSecurity.Service.DoctorService;
-import com.org.SpringSecurity.dto.DoctorRequestDto;
-import com.org.SpringSecurity.dto.DoctorResponseDto;
+import com.org.SpringSecurity.dto.Doctor.DoctorRequestDto;
+import com.org.SpringSecurity.dto.Doctor.DoctorResponseDto;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @AllArgsConstructor

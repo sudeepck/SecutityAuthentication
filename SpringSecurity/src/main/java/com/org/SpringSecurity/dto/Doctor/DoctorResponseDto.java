@@ -1,6 +1,7 @@
-package com.org.SpringSecurity.dto;
+package com.org.SpringSecurity.dto.Doctor;
 
 
+import com.org.SpringSecurity.dto.InsuranceResponseDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

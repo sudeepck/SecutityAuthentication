@@ -4,15 +4,12 @@ import com.org.SpringSecurity.Entity.Insurance;
 import com.org.SpringSecurity.Entity.Patient;
 import com.org.SpringSecurity.Repository.PatientsRepository;
 import com.org.SpringSecurity.dto.InsuranceResponseDto;
-import com.org.SpringSecurity.dto.PatientRequestDto;
-import com.org.SpringSecurity.dto.PatientResponseDTO;
+import com.org.SpringSecurity.dto.Patient.PatientRequestDto;
+import com.org.SpringSecurity.dto.Patient.PatientResponseDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Service
@@ -36,6 +33,7 @@ public class PatientService {
                 : null;
 
         return  PatientResponseDTO.builder()
+                .id(patient.getId())
                 .name(patient.getName())
                 .birthDate(patient.getBirthDate())
                 .email(patient.getEmail())

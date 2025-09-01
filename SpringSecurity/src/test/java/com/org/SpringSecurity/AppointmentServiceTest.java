@@ -8,6 +8,7 @@ import com.org.SpringSecurity.Repository.PatientsRepository;
 import com.org.SpringSecurity.Service.AppointmentService;
 import com.org.SpringSecurity.Service.InsuranceService;
 import com.org.SpringSecurity.Service.PatientService;
+import com.org.SpringSecurity.dto.Appointment.AppointmentResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,10 @@ public class AppointmentServiceTest {
                 .reason("cancer")
                 .build();
 
-        Appointment appointmentData = appointmentService.createNewAppointment(appointment, 1L,1L);
+        AppointmentResponseDto appointmentData = appointmentService.createNewAppointment(appointment, 1L,1L);
 
 
-        Appointment UpdatedAppointment = appointmentService.reassignAppointmentToAnotherDoctor(appointmentData.getId(),3L);
+        AppointmentResponseDto UpdatedAppointment = appointmentService.reassignAppointmentToAnotherDoctor(appointmentData.getId(),3L);
         System.out.println("UpdatedAppointment : " + " " + UpdatedAppointment);
     }
 
@@ -51,9 +52,9 @@ public class AppointmentServiceTest {
                 .appointmentTime(LocalDateTime.of(2025,11,1,22,22,20))
                 .reason("cancer")
                 .build();
-        Appointment appointmentData1 = appointmentService.createNewAppointment(appointment1, 1L,1L);
-        Appointment appointmentData2 = appointmentService.createNewAppointment(appointment2, 1L,1L);
-        Appointment appointmentData3= appointmentService.createNewAppointment(appointment3, 1L,1L);
+        AppointmentResponseDto appointmentData1 = appointmentService.createNewAppointment(appointment1, 1L,1L);
+        AppointmentResponseDto appointmentData2 = appointmentService.createNewAppointment(appointment2, 1L,1L);
+        AppointmentResponseDto appointmentData3= appointmentService.createNewAppointment(appointment3, 1L,1L);
 
 
         System.out.println(appointmentData1);
