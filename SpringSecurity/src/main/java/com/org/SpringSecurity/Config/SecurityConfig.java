@@ -51,6 +51,7 @@
                                     "/patient/AddPatient",
                                     "/doctor/AddDoctor",
                                     "/doctor/{id}",
+                                    "api/appointments/create",
                                     "/appointments/**",
                                     "/dashboard"
                             ).permitAll()
