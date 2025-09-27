@@ -23,6 +23,7 @@ public class JwtAuthUtil {
 
 
     private final SecretKey secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+    private static final long JWT_EXPIRATION_MS = 1000 * 60 * 30;
 
     private SecretKey getSecreteKey() {
         return secretKey;
@@ -36,7 +37,7 @@ public class JwtAuthUtil {
                 .add(claims)
                 .subject(user.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + (60*60*30)))
+                .expiration(new Date(System.currentTimeMillis() + (1000*60*30)))
                 .and()
                 .signWith(getSecreteKey())
                 .compact();
