@@ -33,6 +33,11 @@ public class AuthService {
     private AuthenticationManager authenticationManager;
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder(12);
 
+    @Autowired
+    public void setAuthenticationManager(AuthenticationManager authenticationManager) {
+        this.authenticationManager = authenticationManager;
+    }
+
 
     public LoginresponseDto verify(LoginRequestDto loginRequestDto) {
         Authentication authentication = authenticationManager.
