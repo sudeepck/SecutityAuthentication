@@ -1,10 +1,9 @@
 package com.org.SpringSecurity.Controller;
 
-import com.org.SpringSecurity.Model.Student;
+import com.org.SpringSecurity.Entity.Student;
 import com.org.SpringSecurity.Service.StudentService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
